@@ -6,14 +6,19 @@
 //
 
 import UIKit
+import CoreLocation
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var map: PISimpleMapView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
-
+    
+    @IBAction func zoomIn(_ sender: UIButton) {
+        let location = CLLocation(latitude: 46.30, longitude: 8.77)
+        map.displayPinOnMap(location: location)
+    }
 }
 

@@ -16,6 +16,7 @@
 		D9D686CA2C7B1D40002B5F46 /* Map18Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D686C92C7B1D40002B5F46 /* Map18Tests.swift */; };
 		D9D686D42C7B1D40002B5F46 /* Map18UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D686D32C7B1D40002B5F46 /* Map18UITests.swift */; };
 		D9D686D62C7B1D40002B5F46 /* Map18UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D686D52C7B1D40002B5F46 /* Map18UITestsLaunchTests.swift */; };
+		D9D686E32C7B1D88002B5F46 /* PISimpleMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D686E22C7B1D88002B5F46 /* PISimpleMapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		D9D686CF2C7B1D40002B5F46 /* Map18UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Map18UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9D686D32C7B1D40002B5F46 /* Map18UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map18UITests.swift; sourceTree = "<group>"; };
 		D9D686D52C7B1D40002B5F46 /* Map18UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map18UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D9D686E22C7B1D88002B5F46 /* PISimpleMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PISimpleMapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				D9D686B42C7B1D3D002B5F46 /* SceneDelegate.swift */,
 				D9D686B62C7B1D3D002B5F46 /* ViewController.swift */,
 				D9D686B82C7B1D3D002B5F46 /* Main.storyboard */,
+				D9D686E22C7B1D88002B5F46 /* PISimpleMapView.swift */,
 				D9D686BB2C7B1D40002B5F46 /* Assets.xcassets */,
 				D9D686BD2C7B1D40002B5F46 /* LaunchScreen.storyboard */,
 				D9D686C02C7B1D40002B5F46 /* Info.plist */,
@@ -258,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9D686E32C7B1D88002B5F46 /* PISimpleMapView.swift in Sources */,
 				D9D686B72C7B1D3D002B5F46 /* ViewController.swift in Sources */,
 				D9D686B32C7B1D3D002B5F46 /* AppDelegate.swift in Sources */,
 				D9D686B52C7B1D3D002B5F46 /* SceneDelegate.swift in Sources */,
