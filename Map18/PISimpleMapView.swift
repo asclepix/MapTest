@@ -34,6 +34,8 @@ class PISimpleMapView: MKMapView {
     
     private let pinIdentifier = "pinIdentifier"
     
+    private var scaleView: MKScaleView?
+    
     typealias PinAnnotationView = MKMarkerAnnotationView     // MKPinAnnotationView
     
     required init?(coder: NSCoder) {
@@ -51,6 +53,27 @@ class PISimpleMapView: MKMapView {
         layer.cornerRadius = CORNER_RADIUS
         register(PinAnnotationView.self,
                  forAnnotationViewWithReuseIdentifier: pinIdentifier)
+        
+        addScale()
+    }
+    
+    private func addScale() {
+        
+        let scale = MKScaleView(mapView: self)
+        scale.translatesAutoresizingMaskIntoConstraints = false
+        scale.scaleVisibility = .visible // always visible
+        addSubview(scale)
+        
+        let guide = safeAreaLayoutGuide
+        NSLayoutConstraint.activate([
+            scale.leftAnchor.constraint(equalTo: guide.leftAnchor, constant: 16.0),
+            scale.rightAnchor.constraint(equalTo: guide.centerXAnchor),
+            scale.topAnchor.constraint(equalTo: guide.topAnchor),
+            scale.heightAnchor.constraint(equalToConstant: 20.0)
+        ])
+        
+        scaleView?.removeFromSuperview()
+        scaleView = scale
     }
     
     func displayPinOnMap(location: CLLocation) {
@@ -62,6 +85,7 @@ class PISimpleMapView: MKMapView {
         // Position the map so that all overlays and annotations are visible on screen.
         visibleMapRect = visibleArea(from: annotation)
         // setVisibleMapRect(visibleArea(from: annotation), animated: true)
+        // region = MKCoordinateRegion(visibleArea(from: annotation))
     }
     
     private func visibleArea(from annotation: PIAnnotation) -> MKMapRect {
