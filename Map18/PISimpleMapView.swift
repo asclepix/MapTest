@@ -83,9 +83,17 @@ class PISimpleMapView: MKMapView {
         addAnnotation(annotation)
         
         // Position the map so that all overlays and annotations are visible on screen.
-        visibleMapRect = visibleArea(from: annotation)
+        // visibleMapRect = visibleArea(from: annotation)
         // setVisibleMapRect(visibleArea(from: annotation), animated: true)
         // region = MKCoordinateRegion(visibleArea(from: annotation))
+        
+        // --
+        
+        // visibleRegion(from: annotation)
+        
+        // --
+        
+        visibleCamera(from: annotation)
     }
     
     private func visibleArea(from annotation: PIAnnotation) -> MKMapRect {
@@ -95,5 +103,24 @@ class PISimpleMapView: MKMapView {
                          y: annotationPoint.y - HALF_MAP_SIDE_MULTIPLIER * METERS_PER_MILE,
                          width: HALF_MAP_SIDE_MULTIPLIER * 2.0 * METERS_PER_MILE,
                          height: HALF_MAP_SIDE_MULTIPLIER * 2.0 * METERS_PER_MILE)
+    }
+    
+    private func visibleCamera(from annotation: PIAnnotation) {
+        
+        let placemark = MKPlacemark(coordinate: annotation.coordinate)
+        let mapItem = MKMapItem(placemark: placemark)
+        let camera = MKMapCamera(lookingAt: mapItem,
+                                 forViewSize: CGSize(width: HALF_MAP_SIDE_MULTIPLIER * 2.0 * METERS_PER_MILE,
+                                                     height: HALF_MAP_SIDE_MULTIPLIER * 2.0 * METERS_PER_MILE),
+                                 allowPitch: false)
+        setCamera(camera, animated: true)
+    }
+    
+    private func visibleRegion(from annotation: PIAnnotation) {
+        
+        let mapRegion = MKCoordinateRegion(center: annotation.coordinate,
+                                           span: MKCoordinateSpan(latitudeDelta: 0.05,
+                                                                  longitudeDelta: 0.05))
+        setRegion(mapRegion, animated: true)
     }
 }
