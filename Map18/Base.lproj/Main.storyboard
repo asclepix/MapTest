@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -25,22 +25,42 @@
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QWP-Lj-fVS">
-                                <rect key="frame" x="153" y="444" width="87" height="35"/>
+                                <rect key="frame" x="153" y="451" width="87" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Zoom In"/>
                                 <connections>
                                     <action selector="zoomIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="odE-aM-nBH"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qUQ-8P-6qe">
+                                <rect key="frame" x="146" y="494" width="101" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Zoom Out"/>
+                                <connections>
+                                    <action selector="zoomOut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FLw-s8-oC1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xlw-Lp-aOX">
+                                <rect key="frame" x="137.66666666666666" y="537" width="118" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="World Zoom"/>
+                                <connections>
+                                    <action selector="zoomWorld:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AHm-cB-k46"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Xlw-Lp-aOX" firstAttribute="top" secondItem="qUQ-8P-6qe" secondAttribute="bottom" constant="8" symbolic="YES" id="0yV-cm-isK"/>
                             <constraint firstItem="8Ve-ZW-dJA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="1QA-6c-b8o"/>
+                            <constraint firstItem="QWP-Lj-fVS" firstAttribute="top" secondItem="8Ve-ZW-dJA" secondAttribute="bottom" constant="31" id="Aae-r1-J9h"/>
                             <constraint firstItem="8Ve-ZW-dJA" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="DOA-Ff-nju"/>
+                            <constraint firstItem="qUQ-8P-6qe" firstAttribute="top" secondItem="QWP-Lj-fVS" secondAttribute="bottom" constant="8" symbolic="YES" id="GdW-BE-Vhw"/>
                             <constraint firstItem="8Ve-ZW-dJA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="HSM-s9-qMd"/>
+                            <constraint firstItem="Xlw-Lp-aOX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Mzv-pg-o3A"/>
                             <constraint firstItem="QWP-Lj-fVS" firstAttribute="centerX" secondItem="8Ve-ZW-dJA" secondAttribute="centerX" id="WA3-uP-kcH"/>
-                            <constraint firstItem="QWP-Lj-fVS" firstAttribute="top" secondItem="8Ve-ZW-dJA" secondAttribute="bottom" constant="24" id="j9k-5u-S0h"/>
+                            <constraint firstItem="qUQ-8P-6qe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ekZ-p9-HS9"/>
                         </constraints>
                     </view>
                     <connections>

@@ -123,4 +123,24 @@ class PISimpleMapView: MKMapView {
                                                                   longitudeDelta: 0.05))
         setRegion(mapRegion, animated: true)
     }
+    
+    func zoomOut(location: CLLocation) {
+        
+        let placemark = MKPlacemark(coordinate: location.coordinate)
+        let mapItem = MKMapItem(placemark: placemark)
+        let camera = MKMapCamera(lookingAt: mapItem,
+                                 forViewSize: CGSize(width: HALF_MAP_SIDE_MULTIPLIER * 20.0 * METERS_PER_MILE,
+                                                     height: HALF_MAP_SIDE_MULTIPLIER * 20.0 * METERS_PER_MILE),
+                                 allowPitch: false)
+        setCamera(camera, animated: true)
+    }
+    
+    func zoomWorld() {
+        
+        let mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 20.0,
+                                                                          longitude: -40.0),
+                                           span: MKCoordinateSpan(latitudeDelta: 180,
+                                                                  longitudeDelta: 180))
+        setRegion(mapRegion, animated: true)
+    }
 }

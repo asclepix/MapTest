@@ -20,5 +20,14 @@ class ViewController: UIViewController {
         let location = CLLocation(latitude: 46.30, longitude: 8.77)
         map.displayPinOnMap(location: location)
     }
+    
+    @IBAction func zoomOut(_ sender: UIButton) {
+        let location = CLLocation(latitude: 46.30, longitude: 8.77)
+        map.zoomOut(location: location)
+    }
+    
+    @IBAction func zoomWorld(_ sender: UIButton) {
+        map.zoomWorld()
+    }
 }
 
