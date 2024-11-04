@@ -54,6 +54,7 @@ class PISimpleMapView: MKMapView {
         register(PinAnnotationView.self,
                  forAnnotationViewWithReuseIdentifier: pinIdentifier)
         
+        delegate = self
         addScale()
     }
     
@@ -142,5 +143,14 @@ class PISimpleMapView: MKMapView {
                                            span: MKCoordinateSpan(latitudeDelta: 180,
                                                                   longitudeDelta: 180))
         setRegion(mapRegion, animated: true)
+    }
+}
+
+extension PISimpleMapView: MKMapViewDelegate {
+    
+    func mapView(_ mapView: MKMapView,
+                 regionDidChangeAnimated animated: Bool) {
+        
+        addScale()
     }
 }
